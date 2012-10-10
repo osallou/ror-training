@@ -14,5 +14,6 @@ class NoteTest < ActiveSupport::TestCase
     notes = Note.search('ll')
     puts notes.inspect
     assert notes.count > 0
+    assert Note.search('LL').count > 0
   end
 end
