@@ -8,6 +8,7 @@ gem 'rails', '3.2.8'
 gem 'sqlite3'
 
 group :test do
+  gem 'rake'
   gem 'cucumber-rails'
   gem 'database_cleaner'
 end
