@@ -7,6 +7,7 @@ gem 'rails', '3.2.8'
 
 gem 'sqlite3'
 
+# Gems for test group
 group :test do
   gem 'rake'
   gem 'cucumber-rails'
