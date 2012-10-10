@@ -4,8 +4,12 @@ gem 'rails', '3.2.8'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
+# Gemfile
+# for CRuby, Rubinius, including Windows and RubyInstaller
+gem "sqlite3", :platform => [:ruby, :mswin, :mingw]
 
-gem 'sqlite3'
+# for JRuby
+gem "jdbc-sqlite3", :platform => :jruby
 
 # Gems for test group
 group :test do
