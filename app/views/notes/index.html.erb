@@ -1,18 +1,18 @@
 <h1>Listing notes</h1>
 <h2>Post</h2>
 <%= form_for :note, :url => { :action => "search"}, :method => "post" do |f| %>
-  <%= f.text_field :user %>
+  <%= f.text_field :title %>
   <%= f.submit 'Search' %>
 <% end %>
 <h2>Get</h2>
 <%= form_tag({:controller => "notes", :action => "search"}, :method => "get")  do %>
-  <%= text_field_tag :user %>
+  <%= text_field_tag :title %>
   <%= submit_tag 'Search' %>
 <% end %>
 
 <table>
   <tr>
-    <th>User</th>
+    <th>Title</th>
     <th>Content</th>
     <th></th>
     <th></th>
@@ -21,7 +21,7 @@
 
 <% @notes.each do |note| %>
   <tr>
-    <td><%= note.user %></td>
+    <td><%= note.title %></td>
     <td><%= note.content %></td>
     <td><%= link_to 'Show', note %></td>
     <td><%= link_to 'Edit', edit_note_path(note) %></td>

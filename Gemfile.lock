@@ -138,9 +138,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-jdbcsqlite3-adapter
   coffee-rails (~> 3.2.1)
   cucumber-rails
   database_cleaner
+  jdbc-sqlite3
   jquery-rails
   rails (= 3.2.8)
   rake

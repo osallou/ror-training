@@ -6,7 +6,7 @@ class NoteTest < ActiveSupport::TestCase
   # end
 
   test "find notes" do
-    found = Note.where(:user => 'test').all.count
+    found = Note.where(:title => 'test').all.count
     assert found>0
   end
 

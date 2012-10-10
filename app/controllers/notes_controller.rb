@@ -3,13 +3,13 @@ class NotesController < ApplicationController
   # GET /notes/search/ll
   # GET /notes/search/ll.json
   def search
-    if params[:user].nil? or params[:user].empty?
+    if params[:title].nil? or params[:title].empty?
       paramnote = params[:note]
-      @notes = Note.search(paramnote[:user])
-      @filter = paramnote[:user]
+      @notes = Note.search(paramnote[:title])
+      @filter = paramnote[:title]
     else
-      @notes = Note.search(params[:user])
-      @filter = params[:user]
+      @notes = Note.search(params[:title])
+      @filter = params[:title]
     end
     respond_to do |format|
       format.html # search.html.erb
