@@ -10,6 +10,7 @@ gem "sqlite3", :platform => [:ruby, :mswin, :mingw]
 
 # for JRuby
 gem "jdbc-sqlite3", :platform => :jruby
+gem "activerecord-sqlite3-adapter", :platform => :jruby
 
 # Gems for test group
 group :test do
