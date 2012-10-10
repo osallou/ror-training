@@ -1,7 +1,11 @@
 Training::Application.routes.draw do
+
+match '/notes/search', :controller => 'notes', :action => 'search', :via => [:get, :post]
+
   resources :notes
 
 root :to => "notes#index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

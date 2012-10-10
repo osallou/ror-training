@@ -1,15 +1,5 @@
-<h1>Listing notes</h1>
-<h2>Post</h2>
-<%= form_for :note, :url => { :action => "search"}, :method => "post" do |f| %>
-  <%= f.text_field :user %>
-  <%= f.submit 'Search' %>
-<% end %>
-<h2>Get</h2>
-<%= form_tag({:controller => "notes", :action => "search"}, :method => "get")  do %>
-  <%= text_field_tag :user %>
-  <%= submit_tag 'Search' %>
-<% end %>
-
+<h1>Listing notes for <%= @filter %></h1>
+<h2><%= link_to 'All notes', notes_path  %></h2>
 <table>
   <tr>
     <th>User</th>
@@ -32,4 +22,3 @@
 
 <br />
 
-<%= link_to 'New Note', new_note_path %>

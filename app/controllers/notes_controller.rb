@@ -1,4 +1,23 @@
 class NotesController < ApplicationController
+
+  # GET /notes/search/ll
+  # GET /notes/search/ll.json
+  def search
+    if params[:user].nil? or params[:user].empty?
+      paramnote = params[:note]
+      @notes = Note.search(paramnote[:user])
+      @filter = paramnote[:user]
+    else
+      @notes = Note.search(params[:user])
+      @filter = params[:user]
+    end
+    respond_to do |format|
+      format.html # search.html.erb
+      format.json { render json: @notes }
+    end
+
+  end
+
   # GET /notes
   # GET /notes.json
   def index
