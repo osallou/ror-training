@@ -4,6 +4,8 @@ gem 'rails', '3.2.8'
 
 gem 'will_paginate', '~> 3.0.0'
 
+gem 'simple_form'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 # Gemfile
