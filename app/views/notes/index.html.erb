@@ -1,8 +1,7 @@
 <h1>Listing notes</h1>
-<h2>Search</h2>
 <%= form_for :note, :url => { :action => "search"}, :method => "post" do |f| %>
   <%= f.text_field :title, :class => 'search-query' %>
-  <%= f.submit 'Search' %>
+  <%= f.submit 'Search', :class => 'btn'  %>
 <% end %>
 
 <table class="table table-bordered">
@@ -28,4 +27,4 @@
 
 <br />
 
-<%= link_to 'New Note', new_note_path %>
+<%= link_to 'New Note', new_note_path, :class => 'btn' %>

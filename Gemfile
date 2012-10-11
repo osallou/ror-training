@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
 
+gem 'heroku'
+
 gem 'will_paginate', '~> 3.0.0'
 
 gem 'simple_form'
@@ -14,11 +16,16 @@ gem 'activeadmin'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 # Gemfile
 # for CRuby, Rubinius, including Windows and RubyInstaller
-gem "sqlite3", :platform => [:ruby, :mswin, :mingw]
+group :development, :test do
+  gem "sqlite3", :platform => [:ruby, :mswin, :mingw]
+  # JRuby
+  gem "jdbc-sqlite3", :platform => :jruby
+  gem "activerecord-jdbcsqlite3-adapter", :platform => :jruby
+end
+group :production do
+  gem 'pg'
+end
 
-# for JRuby
-gem "jdbc-sqlite3", :platform => :jruby
-gem "activerecord-jdbcsqlite3-adapter", :platform => :jruby
 
 # Gems for test group
 group :test do
