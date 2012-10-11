@@ -1,5 +1,7 @@
 Training::Application.routes.draw do
 
+  devise_for :users
+
   resources :users
 
 match '/notes/search', :controller => 'notes', :action => 'search', :via => [:get, :post]
