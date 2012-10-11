@@ -14,6 +14,9 @@
       <li><a href="/notes/">Notes</a></li>
       <li><a href="/users/">Users</a></li>
 <% if user_signed_in? %>
+      <% if current_user.isadmin %>
+      <li><a href="/admin/">Admin</a></li>
+      <% end %>
       <li><a href="#">Welcome <%= current_user.email %></a></li>
       <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
 <% else %>

@@ -7,6 +7,8 @@ gem 'will_paginate', '~> 3.0.0'
 gem 'simple_form'
 
 gem 'devise'
+gem 'activeadmin'
+
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
