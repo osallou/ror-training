@@ -1,33 +1,23 @@
 <h1>Listing notes</h1>
-<h2>Post</h2>
+<h2>Search</h2>
 <%= form_for :note, :url => { :action => "search"}, :method => "post" do |f| %>
-  <%= f.text_field :title %>
+  <%= f.text_field :title, :class => 'search-query' %>
   <%= f.submit 'Search' %>
-<% end %>
-<h2>Get</h2>
-<%= form_tag({:controller => "notes", :action => "search"}, :method => "get")  do %>
-  <%= text_field_tag :title %>
-  <%= submit_tag 'Search' %>
 <% end %>
 
 <table class="table table-bordered">
-  <tr>
+  <thead>
     <th>Title</th>
     <th>Content</th>
     <th></th>
     <th></th>
     <th></th>
-  </tr>
-
+  </thead>
+<tbody>
 <% @notes.each do |note| %>
-  <tr>
-    <td><%= note.title %></td>
-    <td><%= note.content %></td>
-    <td><%= link_to 'Show', note %></td>
-    <td><%= link_to 'Edit', edit_note_path(note) %></td>
-    <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  <%= render note %>
 <% end %>
+</tbody>
 </table>
 <div class="digg_pagination">
     <div clas="page_info">
