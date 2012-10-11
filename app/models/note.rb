@@ -1,6 +1,8 @@
 class Note < ActiveRecord::Base
   attr_accessible :content, :title, :user_id
 
+  scope :recent, order("created_at desc")
+
   belongs_to :user
 
   validates_presence_of :title
