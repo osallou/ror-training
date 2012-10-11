@@ -1,5 +1,7 @@
 class Note < ActiveRecord::Base
-  attr_accessible :content, :title
+  attr_accessible :content, :title, :user_id
+
+  belongs_to :user
 
   validates_presence_of :title
   validates_length_of :title, :minimum => 10, :too_short => "please enter a singnificative title (>=10 characters)"

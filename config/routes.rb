@@ -1,5 +1,7 @@
 Training::Application.routes.draw do
 
+  resources :users
+
 match '/notes/search', :controller => 'notes', :action => 'search', :via => [:get, :post]
 
   resources :notes

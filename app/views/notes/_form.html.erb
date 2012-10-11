@@ -1,5 +1,6 @@
 <h2>With simple_form</h2>
 <%= simple_form_for @note do |f| %>
+  <%= f.association :user %>
   <%= f.input :title %>
   <%= f.input :content %>
   <%= f.button :submit %>
